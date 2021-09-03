@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/LeeSM0518/nuxt-shopping-tutorial-api'
+  baseURL: process.env.baseURL
 })
 
 function fetchProductById(id) {

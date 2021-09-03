@@ -1,5 +1,9 @@
 export default {
+  target: 'static',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
   head: {
     title: 'learn-nuxt',
     htmlAttrs: {
@@ -16,34 +20,31 @@ export default {
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   css: ['@/assets/css/reset.css'],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // Auto import components: https://go.nuxtjs.dev/config-components
   plugins: [],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  // Modules: https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module'
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  modules: [],
 
 
   // server setup
+  build: {},
+
   server: {
     port: process.env.NODE_ENV === 'production' ? null : 5000
   },
-
-  target: 'server',
 
   // env config
   env: {

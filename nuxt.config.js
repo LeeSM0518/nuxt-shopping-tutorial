@@ -47,6 +47,6 @@ export default {
 
   // env config
   env: {
-    baseURL: process.env.NODE_ENV === 'production' ? 'https://my-json-server.typicode.com/LeeSM0518/nuxt-shopping-tutorial-api' : 'https://localhost:3000'
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://my-json-server.typicode.com/LeeSM0518/nuxt-shopping-tutorial-api' : 'http://localhost:3000'
   }
 }

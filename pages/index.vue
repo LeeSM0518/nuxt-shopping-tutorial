@@ -16,7 +16,7 @@
         </li>
       </ul>
       <div class='cart-wrapper'>
-        <button class='btn' @click="moveToCartPage">장바구니 바로가기</button>
+        <button class='btn' @click='moveToCartPage'>장바구니 바로가기</button>
       </div>
     </main>
   </div>
@@ -25,14 +25,14 @@
 <script>
 import axios from 'axios'
 import SearchInput from '@/components/SearchInput.vue'
-import { fetchProductsByKeyword } from '~/api'
+import { fetchProductsByKeyword, fetchProducts } from '~/api'
 
 export default {
   components: { SearchInput },
 
   // pages에서만 사용할 수 있다.
   async asyncData() {
-    const response = await axios.get('http://localhost:3000/products')
+    const response = await fetchProducts()
     const products = response.data.map(item => ({
       ...item,
       imageUrl: `${item.imageUrl}?random=${Math.random()}`

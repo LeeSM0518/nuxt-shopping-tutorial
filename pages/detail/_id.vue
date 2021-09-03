@@ -19,6 +19,7 @@
 
 <script>
 import { fetchProductById, createCartItem } from '~/api'
+import product from '~/pages/product'
 
 export default {
   async asyncData({ params }) {
@@ -26,12 +27,21 @@ export default {
     return { product: response.data }
   },
 
-  head: {
-    title: 'Shopping Item',
-    meta: [
-      { hid: 'description', name: 'description', content: '이 상품은 ~~입니다.' }
-    ]
+  head: function() {
+    return {
+      head: {
+        title: `Shopping Item - ${this.product.name}`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: `이 상품은 ${this.product.name}입니다.`
+          }
+        ]
+      }
+    }
   },
+
 
   methods: {
     async addToCart() {
